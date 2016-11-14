@@ -1,0 +1,42 @@
+.menu-item:hover, .menu-item.active {
+    border-right: #FA5340 5px solid;
+}
+
+.main-content {
+    width: 93%;
+    float: right;
+}
+/* CSS used here will be applied after bootstrap.css */
+.navbar-fixed-left {
+    width: 7%;
+    position: fixed;
+    border-radius: 0;
+    height: 100%;
+    background-color: #3C4457;
+}
+
+.navbar-fixed-left .navbar-nav > li {
+    float: none; /* Cancel default li float: left */
+    width: 100%;
+}
+
+.navbar-fixed-left + .container {
+    padding-left: 160px;
+}
+
+.container {
+    height: 1000px;
+}
+
+.wrapper {
+    margin-left: 140px;
+}
+
+.nav-icon {
+    font-size: 25px;
+}
+
+.nav-name:hover, .home-logo:hover {
+    color: #FA5340;
+
+}

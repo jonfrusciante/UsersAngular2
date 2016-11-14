@@ -1,0 +1,25 @@
+<form class="search-user-form" name="searchForm" novalidate #formRef="ngForm" (ngSubmit)="showFormValue(formRef.value)">
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-search"></i></div>
+            <fieldset ngModelGroup="searchUserGroup">
+                <input type="text" name="search" class="form-control" minlength=3 maxlength="10"
+                       placeholder="Search user"
+                       [(ngModel)]="searchUser" required #searchUserRef="ngModel">
+                <!--<input type="password" name="password" ngModel>-->
+            </fieldset>
+        </div>
+        <div>{{searchUser}}</div>
+        <hr>
+        <!--<div>{{searchUserRef.valid | json}} is valid</div>-->
+        <div *ngIf="searchUserRef.errors?.required">This field is required</div>
+        <div *ngIf="searchUserRef.errors?.minlength" style="color:red" role="alert">This field must be longer than
+            {{searchUserRef.errors?.minlength.requiredLength}} chars. You only typed
+            {{searchUserRef.errors?.minlength.actualLength}} char.
+        </div>
+        <!--<div>{{searchUserRef.errors | json}}</div>-->
+    </div>
+    <button type="submit">Show form value</button>
+</form>
+{{formRef.value | json}}
+{{formRef.valid | json}}

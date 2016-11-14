@@ -1,0 +1,94 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="heading">User list
+        </h2>
+    </div>
+    <div class="panel-body">
+        <app-search-form></app-search-form>
+        <!--<form class="search-user-form" name="searchForm" novalidate>-->
+            <!--<div class="form-group">-->
+                <!--<div class="input-group">-->
+                    <!--<div class="input-group-addon"><i class="fa fa-search"></i></div>-->
+                    <!--<input type="text" name="search" class="form-control" ng-minlength=3 ng-maxlength="10"-->
+                           <!--placeholder="Search user"-->
+                           <!--#searchUser>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div ng-messages="searchForm.search.$error" style="color:maroon" role="alert">-->
+                <!--<div ng-message="required">You did not enter a field</div>-->
+                <!--<div ng-message="minlength">Your field is too short</div>-->
+                <!--<div ng-message="maxlength">Your field is too long</div>-->
+            <!--</div>-->
+        <!--</form>-->
+        <div class="table-container">
+            <div class="table-striped">
+                <table class="user-table table table-hover">
+                    <thead>
+                    <tr>
+                        <!--&lt;!&ndash;ToDo&ndash;&gt; zrób heading z ng-repeat-->
+                        <td></td>
+                        <td>id</td>
+                        <td>name</td>
+                        <td>surname</td>
+                        <td>date of birth</td>
+                        <td>mobile number</td>
+                        <td>address</td>
+                        <td>
+                            <i class=" edit-icon fa fa-pencil-square-o"></i>
+                            <button class="btn edit-all-btn btn-primary"
+                                    ng-hide="vm.toggleView" (click)="displayMsg(searchUser.value)">Edit selected
+                                <!--<button class="btn edit-all-btn btn-primary"-->
+                                        <!--ng-show="vm.toggleView">Update selected-->
+                                <!--</button>-->
+                            </button>
+                        </td>
+                    </tr>
+                    </thead>
+                    <tr class="user-row animation-enter animation-leave"
+                        *ngFor="let user of user.users">
+                        <td>
+                            <input type="checkbox"/>
+                        </td>
+                        <td>
+                            <div ng-hide="vm.editingUsers[user.id]">{{user.id}}</div>
+                            <!--<div ng-show="vm.editingUsers[user.id]"><input type="text" readonly ng-model="user.id"/>-->
+                            <!--</div>-->
+                        </td>
+                        <td>
+                            <div ng-hide="vm.editingUsers[user.id]">{{user.name}}</div>
+                            <!--<div ng-show="vm.editingUsers[user.id]"><input type="text" ng-model="user.name"/></div>-->
+                        </td>
+                        <td>
+                            <div ng-hide="vm.editingUsers[user.id]">{{user.surname}}</div>
+                            <!--<div ng-show="vm.editingUsers[user.id]"><input type="text" ng-model="user.surname"/></div>-->
+                        </td>
+                        <td>
+                            <div ng-hide="vm.editingUsers[user.id]">{{user.dateOb}}</div>
+                            <!--<div ng-show="vm.editingUsers[user.id]"><input type="text" ng-model="user.dateOb"/></div>-->
+                        </td>
+                        <td>
+                            <div ng-hide="vm.editingUsers[user.id]">{{user.mobile}}</div>
+                            <!--<div ng-show="vm.editingUsers[user.id]"><input type="text" ng-model="user.mobile"/></div>-->
+                        </td>
+                        <td>
+                            <div ng-hide="vm.editingUsers[user.id]">{{user.address}}</div>
+                            <!--<div ng-show="vm.editingUsers[user.id]"><input type="text" ng-model="user.address"/></div>-->
+                        </td>
+                        <td>
+                            <!--<i class="edit-icon fa fa-pencil-square-o"></i>-->
+                            <button class="btn edit-btn btn-primary" ng-hide="vm.editingUsers[user.id]"
+                                    (click)="displayMsg(user)">Edit
+                            </button>
+                            <!--<button class="btn update-btn btn-primary" ng-show="vm.editingUsers[user.id]"-->
+                                    <!--ng-click="vm.updateUser(user)">Update-->
+                            <!--</button>-->
+                            <i class="remove-icon fa fa-times"></i>
+                            <button class="btn delete-btn btn-danger" ng-click="vm.deleteUser(user)">Delete
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

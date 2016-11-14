@@ -1,0 +1,15 @@
+{
+  "name": "angular-phonecat",
+  "description": "A starter project for AngularJS",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": {
+      "name": "Kamela, Maciej",
+      "email": "maciej.kamela@wp.pl"
+  },
+  "private": true,
+  "dependencies": {
+    "bootstrap": "3.3.x",
+    "jquery": "2.2.x"
+  }
+}

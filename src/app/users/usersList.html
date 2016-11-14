@@ -1,0 +1,79 @@
+<div class="panel-body users-container">
+    <h2 class="heading">{{headingTitle}}
+        <h4 class="label label-info users-amount" [class.label-warning]="usersAmount < 10 "> {{usersAmount}} </h4>
+    </h2>
+    <div class="active-user" *ngIf="activeUser">
+        <h2>Active user: {{activeUser.name}}
+            <small>{{activeUser.surname}}</small>
+        </h2>
+        <input type="text" [(ngModel)]="activeUser.name"/>
+    </div>
+
+    <div class="table-container">
+        <div class="table-striped">
+            <table class="user-table table table-hover">
+                <thead>
+                <tr>
+                    <td></td>
+                    <td>id</td>
+                    <td>name</td>
+                    <td>surname</td>
+                    <td>date of birth</td>
+                    <td>mobile number</td>
+                    <td>address</td>
+                    <td>
+                        <button class="save-user" (click)="saveWithPromise()">Save</button>
+                    </td>
+                </tr>
+                </thead>
+                <tr class="user-row" *ngFor="let user of users"
+                    [class.active]="user===activeUser">
+                    <td>
+                        <input type="checkbox" name="selectUser" (click)="onSelectedUser(user)"/>
+                    </td>
+                    <td>
+                        <a [hidden]="!isHidden" routerLink="/user/{{user.id}}">{{user.id}}</a>
+                    </td>
+                    <td>
+                        <div [hidden]="!isHidden">{{user.name}}</div>
+                        <input *ngIf="activeUser === user" type="text" [(ngModel)]="activeUser.name"
+                               placeholder="{{activeUser.name}}"/>
+                    </td>
+                    <td>
+                        <div [hidden]="!isHidden">{{user.surname}}</div>
+                        <input *ngIf="activeUser === user" type="text" [(ngModel)]="activeUser.surname"
+                               placeholder="{{activeUser.surname}}"/>
+                    </td>
+                    <td>
+                        <div [hidden]="!isHidden">{{user.dateOb}}</div>
+                        <input *ngIf="activeUser === user" type="text" [(ngModel)]="activeUser.dateOb"
+                               placeholder="{{activeUser.dateOb}}"/>
+                    </td>
+                    <td>
+                        <div [hidden]="!isHidden">{{user.mobile}}</div>
+                        <input *ngIf="activeUser === user" type="text" [(ngModel)]="activeUser.mobile"
+                               placeholder="{{activeUser.mobile}}"/>
+                    </td>
+                    <td>
+                        <div [hidden]="!isHidden">{{user.address}}</div>
+                        <input *ngIf="activeUser === user" type="text" [(ngModel)]="activeUser.address"
+                               placeholder="{{activeUser.address}}"/>
+                    </td>
+                    <td>
+                        <i class="glyphicon glyphicon-remove-circle remove-user-icon"
+                           (click)="deleteUserWithPromise(user); $event.stopPropagation()"></i>
+                        <i class="glyphicon glyphicon-pencil edit-user-icon"
+                           (click)="editUser(user);$event.stopPropagation()" [hidden]="!isHidden"></i>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <nav aria-label="...">
+        <ul class="pagination">
+            <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+            ...
+        </ul>
+    </nav>
+</div>

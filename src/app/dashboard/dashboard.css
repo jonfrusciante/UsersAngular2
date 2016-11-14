@@ -1,0 +1,9 @@
+.dashboard-container {
+    width: 92%;
+    float: right;
+    padding: 10px;
+}
+
+.person {
+    cursor: pointer;
+}

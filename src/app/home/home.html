@@ -1,0 +1,44 @@
+<div class="navbar navbar-inverse navbar-fixed-left">
+    <a class="navbar-brand home-logo" routerLink="home">LOGO</a>
+    <ul class="nav navbar-nav">
+        <li>
+            <a routerLink="{{item.url}}" routerLinkActive="active" *ngFor="let item of homeItems" class="menu-item">
+                <i class="{{item.icon}} nav-icon"></i>
+                <span class="nav-name">{{item.name}}</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--&lt;!&ndash;end navigation&ndash;&gt;-->
+<!--&lt;!&ndash; 1st section&ndash;&gt;-->
+<!--<div class="wrapper">-->
+<!--<div class="container" id="home">-->
+<!--<div class="row">-->
+<!--<h2>Link 1</h2>-->
+<!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash; 2nd section&ndash;&gt;-->
+<!--<div class="container" id="info">-->
+<!--<div class="row">-->
+<!--<h2>Link 2</h2>-->
+<!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash;3rd section&ndash;&gt;-->
+<!--<div class="container" id="love">-->
+<!--<div class="row">-->
+<!--<h2>Link 3</h2>-->
+<!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash;4th section&ndash;&gt;-->
+<!--<div class="container" id="work">-->
+<!--<div class="row">-->
+<!--<h2>Link 4</h2>-->
+<!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash;5th section&ndash;&gt;-->
+<!--<div class="container" id="contact">-->
+<!--<div class="row">-->
+<!--<h2>Link 5</h2>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->

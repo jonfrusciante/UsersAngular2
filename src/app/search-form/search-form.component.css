@@ -1,0 +1,19 @@
+.search-user-form {
+    width: 20%;
+}
+
+.error-msg {
+    color: red;
+}
+
+input.ng-valid {
+    border: 1px solid green;
+}
+
+input.ng-pristine {
+    border: 1px solid blue;
+}
+
+input.ng-invalid {
+    border: 1px solid red;
+}

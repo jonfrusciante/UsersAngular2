@@ -1,0 +1,54 @@
+.heading {
+    margin-left: 100px;
+}
+
+.table-container {
+    margin: 20px 80px 0px 80px;
+}
+
+thead td {
+    cursor: pointer;
+}
+
+.btn {
+    color: white;
+    width: 75px;
+}
+
+.edit-all-btn {
+    width: 170px;
+}
+
+.edit-icon, .remove-icon {
+    position: absolute;
+    color: white;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.user-row {
+    cursor: pointer;
+}
+
+thead {
+    font-weight: bold;
+}
+
+.remove-user-icon {
+    color: red;
+    font-size: 16px;
+}
+
+.edit-user-icon {
+    font-size: 16px;
+    color: #737373;
+}
+
+.users-container {
+    width: 93%;
+    float: right;
+}
+
+.users-amount {
+    font-size: 18px;
+}
